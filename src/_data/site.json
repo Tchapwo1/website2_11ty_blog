@@ -1,0 +1,21 @@
+{
+  "name": "The Intelligent Editorial",
+  "url": "https://example.netlify.app",
+  "description": "AI tools and software reviews for solo entrepreneurs.",
+  "author": "Your Name",
+  "email": "hello@example.com",
+  "navigation": [
+    { "label": "Home", "url": "/" },
+    { "label": "Blog", "url": "/blog/" },
+    { "label": "Archive", "url": "/archive/" },
+    { "label": "Resources", "url": "/resources/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "Contact", "url": "/contact/" }
+  ],
+  "categories": [
+    "AI Writing",
+    "AI Marketing",
+    "AI Automation",
+    "AI Productivity"
+  ]
+}

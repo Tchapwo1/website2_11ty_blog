@@ -1,0 +1,126 @@
+---
+layout: layouts/base.njk
+title: Archive
+---
+
+<div class="pt-12">
+  <!-- Category Header -->
+  <section class="max-w-7xl mx-auto px-8 mb-16">
+    <span class="text-[0.75rem] font-bold uppercase tracking-[0.05em] text-on-tertiary-container bg-tertiary-fixed px-3 py-1 rounded-sm">Resource Hub</span>
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter mt-6 mb-8 text-primary">
+      Archive & Resources
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed max-w-3xl">
+      The definitive collection of artificial intelligence solutions designed specifically for one-person operations. From automated marketing workflows to intelligent financial planning, discover how to leverage the power of a full team through curated high-performance AI.
+    </p>
+  </section>
+
+  <!-- Featured Section: Best of Category (Bento Style) -->
+  <section class="max-w-7xl mx-auto px-8 mb-24">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-bold tracking-tight text-blue-950">Best of AI for Founders</h2>
+      <div class="h-[1px] flex-grow mx-8 bg-surface-container-highest/30"></div>
+      <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">verified</span>
+    </div>
+    
+    {% set posts = collections.posts | reverse %}
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[500px]">
+      <!-- Main Featured Post -->
+      {% if posts[0] %}
+      <div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden group shadow-sm flex flex-col justify-end">
+        <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+           {% image "https://lh3.googleusercontent.com/aida-public/AB6AXuAK2KKS6KLS2IXFMu_9Oxz9eMqpvz9xUKb4hprIgPZmtqTcbnG627BtvQ6xGXc3WG9EBx1RrhuexoAv_0hhHkNQwdV4YpBbF2pMkQAWj-tfdBzGflleTphw2__3aNrSZLjK7nf2IrWB5GNV2nCXNNhdxqDeTcMwUTZc9Eg1z5XrSw4m3HJEKwygPX7yJY9I3a5-08XqtUjQJ4OeQhUbY9oMpgBDikRz7AWMj5nsQBxfIi3sYBvCLGYuOaCFDk0iznAuXTzTqjlYhlA", posts[0].data.title, "w-full h-full object-cover" %}
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
+        <div class="relative z-10">
+          <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-primary-container bg-primary-container/30 backdrop-blur-md px-2 py-1 rounded mb-4 inline-block">Editor's Choice</span>
+          <h3 class="text-3xl font-bold text-white mb-4 leading-tight">
+            <a href="{{ posts[0].url }}">{{ posts[0].data.title }}</a>
+          </h3>
+          <p class="text-blue-100/90 mb-6 max-w-xl font-body">
+            {{ posts[0].data.description or posts[0].templateContent | truncate(150) }}
+          </p>
+          <a class="inline-flex items-center text-white font-bold text-sm group/btn" href="{{ posts[0].url }}">
+            Read Investigation
+            <span class="material-symbols-outlined ml-2 transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Secondary Featured -->
+      <div class="md:col-span-4 grid grid-rows-2 gap-6">
+        {% if posts[1] %}
+        <div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+          <div>
+            <span class="text-[0.65rem] font-bold uppercase tracking-widest text-primary">Tool Deep-Dive</span>
+            <h4 class="text-xl font-bold mt-2 text-blue-950 leading-tight">
+              <a href="{{ posts[1].url }}">{{ posts[1].data.title }}</a>
+            </h4>
+          </div>
+          <a class="text-primary font-bold text-sm flex items-center mt-4" href="{{ posts[1].url }}">
+            Review
+            <span class="material-symbols-outlined text-sm ml-1">open_in_new</span>
+          </a>
+        </div>
+        {% endif %}
+        
+        <div class="bg-primary text-on-primary rounded-xl p-6 flex flex-col justify-between bg-gradient-to-br from-[#00246a] to-[#00389a] shadow-xl">
+          <div>
+            <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-primary-container">Strategic Guide</span>
+            <h4 class="text-xl font-bold mt-2 leading-tight">Prompt Engineering for Executive Decision Making</h4>
+          </div>
+          <a class="text-white font-bold text-sm flex items-center mt-4" href="/resources/">
+            Learn More
+            <span class="material-symbols-outlined text-sm ml-1">trending_up</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Post Grid -->
+  <section class="max-w-7xl mx-auto px-8">
+    <div class="flex items-baseline justify-between mb-12 border-b border-surface-container-highest/20 pb-4">
+      <h2 class="text-3xl font-extrabold tracking-tight text-blue-950">Latest Insights</h2>
+      <div class="flex space-x-4 text-sm font-medium text-on-surface-variant">
+        <button class="text-primary font-bold border-b-2 border-primary">Most Recent</button>
+        <button class="hover:text-primary transition-colors">Trending</button>
+        <button class="hover:text-primary transition-colors">Essentials</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {% for post in posts %}
+        <article class="group">
+          <a href="{{ post.url }}">
+            <div class="aspect-[16/10] bg-surface-container-high rounded-lg mb-6 overflow-hidden">
+              {% image "https://lh3.googleusercontent.com/aida-public/AB6AXuC4Cmd7FJQBIIXkyvNOdHFaZBT8RLsUOrTM2b9PRlDkKbFAczGlZDydM-eq2CZO-vPSoBLG_dHRA5DxyFak4aCfN5oXGAtrX2qjhFGocbrZ5Ur1tUwh_Uhhkb6zFrwNCLvKxhe7zK7XOsTOEfRADkrKonjRooeFmT5Y_TRkgXfRYdfTTZgSrCo_BJhT4YPsU__xJUW8EIVoCJSow46K3qTVpzroUXEqQy5ijDFOcaH7mx_dmuWtu395idPCubE_NvuIev_rvHAaVFs", post.data.title, "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" %}
+            </div>
+          </a>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3 text-[0.7rem] font-bold uppercase tracking-widest text-slate-500">
+              <span>Analysis</span>
+              <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+              <span>10 Min Read</span>
+            </div>
+            <h3 class="text-xl font-bold text-blue-950 leading-snug group-hover:text-primary transition-colors">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+              {{ post.data.description }}
+            </p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination/Load More -->
+    <div class="mt-20 flex flex-col items-center">
+      <div class="w-16 h-[1px] bg-outline-variant/30 mb-8"></div>
+      <button class="bg-surface-container-high hover:bg-surface-container-highest text-primary font-bold px-10 py-4 rounded-full transition-all duration-300 group">
+        Load More Insights
+        <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-y-1 transition-transform">expand_more</span>
+      </button>
+    </div>
+  </section>
+</div>

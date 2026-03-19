@@ -1,0 +1,131 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 px-8 py-12 lg:py-24">
+  <!-- Left Sidebar: Table of Contents (Sticky) -->
+  <aside class="hidden lg:block lg:col-span-3">
+    <div class="sticky top-32 space-y-8">
+      <div>
+        <h3 class="font-headline font-extrabold text-sm tracking-widest text-on-surface-variant uppercase mb-6">In This Article</h3>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a class="text-primary hover:text-primary-container transition-colors" href="#intro">The Solo Renaissance</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#workflow">Workflow Automation</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#creative">AI Creative Suites</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#finance">Strategic Financial IQ</a></li>
+        </ul>
+      </div>
+      <!-- Resources Box -->
+      <div class="bg-surface-container-low rounded-xl p-6 space-y-4">
+        <h4 class="font-headline font-bold text-primary">Recommended Tools</h4>
+        <div class="space-y-3">
+          <a class="group block p-3 bg-surface-container-lowest rounded-lg hover:shadow-md transition-all" href="#">
+            <span class="block text-xs font-bold text-on-tertiary-container uppercase tracking-tighter">Growth Pick</span>
+            <span class="block font-headline font-bold text-sm group-hover:text-primary">Perplexity Pro</span>
+          </a>
+          <a class="group block p-3 bg-surface-container-lowest rounded-lg hover:shadow-md transition-all" href="#">
+            <span class="block text-xs font-bold text-on-tertiary-container uppercase tracking-tighter">Productivity Pick</span>
+            <span class="block font-headline font-bold text-sm group-hover:text-primary">Raycast AI</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Column -->
+  <article class="lg:col-span-9 max-w-3xl mx-auto w-full">
+    <!-- Article Header -->
+    <header class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest">Strategy</span>
+        <span class="text-outline text-xs">10 Min Read</span>
+      </div>
+      <h1 class="font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl text-blue-950 mb-6 leading-[1.1] -tracking-[0.03em]">{{ title }}</h1>
+      <p class="text-xl text-on-surface-variant leading-relaxed font-body">{{ description }}</p>
+      <div class="mt-8 flex items-center gap-4 py-6 border-y border-outline-variant/20">
+        <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high">
+          {% image "https://lh3.googleusercontent.com/aida-public/AB6AXuCJnnBYp2OaHJCoLQuer43TUf3a57EdCiWY4BraOd_g-IVXXrmgi6v2ocgJM523NctFipy-XoZP1qk-TrbipKEFgiVKkLe_8UMnZS8nkst9oqYQDRJ27q8Qfu3mj_K4tx9sxUV6fa5ZSyUAR8WeuqYTFjHcseGMECn_0bBr6_LIN25OhLwiVf4FnOSyHKot0aLFE-XXsy3j3z8nTNSSzMReySu8AI5n5nAFck49r5-VgzB9pj3z5gLMV7J92zWiG-Keoz_1FgAQM50", "Author", "w-full h-full object-cover" %}
+        </div>
+        <div>
+          <p class="font-headline font-bold text-sm">{{ author or site.author }}</p>
+          <p class="text-xs text-outline font-medium">Founder & Editor-in-Chief</p>
+        </div>
+        <div class="ml-auto flex gap-3">
+          <button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-low transition-colors">
+            <span class="material-symbols-outlined text-xl">share</span>
+          </button>
+          <button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-low transition-colors">
+            <span class="material-symbols-outlined text-xl">bookmark</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <figure class="mb-12 relative">
+      <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-container-high shadow-lg">
+        {% image "https://lh3.googleusercontent.com/aida-public/AB6AXuDa_Ly6H153kya20FTVGVqcxvafVlquX7qOjQnouv0CNgabgShS86ffxb1GpKewqDm8cOKbOWysBFxqvjpxWmUq1_3tP-jjNFQHsha7oE_9MuKAMIfJjuy8RnKFwGfeXFACaAGPYQCYiBdQghDw9uiSdygHJfGz3qlv6Wu11Xg6NyHUYSXacEoTnimRRwWRDHEkiGP8XcAZhfDENy0vx2uhmYhc-6OGgenSGVbccujtzNfaf4AZ1eSzNOYSIT4syUyNm3dB0TyWjYg", "Hero", "w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" %}
+      </div>
+      <figcaption class="mt-4 text-xs text-outline italic text-center">The digital landscape is shifting toward hyper-automated solo operations.</figcaption>
+    </figure>
+
+    <!-- Body Text -->
+    <section class="prose prose-slate max-w-none text-on-surface text-lg leading-[1.8] font-body">
+      {{ content | safe }}
+    </section>
+
+    <!-- Author Bio Footer -->
+    <footer class="mt-20 pt-12 border-t border-outline-variant/30">
+      <div class="bg-surface-container-low rounded-2xl p-8 flex flex-col md:flex-row gap-8 items-center">
+        {% image "https://lh3.googleusercontent.com/aida-public/AB6AXuCA_7g-5ZQptMhmxTuVVq3-Y2qujnV2MpyMRQJ-G171LkKhw-SDua0OtjeRLrMg7na9YSqsUOoScumClVeo3eFKkvKapviW-k5xyG8Ae1ZwvvEu4f92aUHJINCCJYmB3SrlOtbWh5HpTtadfTx-xgKhhP-8oQgVU-67y7CFOXYBB1UeF6KsYGySdpRJ9MVjLWPib6VmlydtsLWjOQc7Muih7Bsl8hr--sEFv5rZu4T17ELdclYFhk-P5WhIWN0xeecU0g7MbXLjXa8", "Marcus Vane", "w-32 h-32 rounded-xl object-cover shadow-lg" %}
+        <div class="text-center md:text-left">
+          <h3 class="font-headline font-bold text-2xl text-blue-950 mb-2">About Marcus Vane</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">Marcus is the founder of The Intelligent Editorial. He has spent the last decade building and selling small-scale SaaS products. Today, he helps solo entrepreneurs navigate the intersection of AI and profitable business models.</p>
+          <div class="flex justify-center md:justify-start gap-4 text-primary">
+            <a class="hover:text-primary-container" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+            <a class="hover:text-primary-container" href="#"><span class="material-symbols-outlined">language</span></a>
+            <a class="hover:text-primary-container" href="#"><span class="material-symbols-outlined">hub</span></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </article>
+</div>
+
+<!-- Related Posts -->
+<section class="bg-surface-container-low py-20 mt-12">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex justify-between items-end mb-12">
+      <div>
+        <span class="text-primary font-bold text-xs uppercase tracking-widest mb-2 block">Keep Reading</span>
+        <h2 class="font-headline font-extrabold text-4xl text-blue-950">Curated For You</h2>
+      </div>
+      <a class="text-primary font-bold flex items-center gap-2 group" href="/blog/">
+        View Archive
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% set relatedCount = 0 %}
+      {% for post in collections.posts | reverse %}
+        {% if post.url != page.url and relatedCount < 3 %}
+          {% set relatedCount = relatedCount + 1 %}
+          <article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow group">
+            <a href="{{ post.url }}">
+              <div class="aspect-video bg-surface-container-high overflow-hidden">
+                {% image "https://lh3.googleusercontent.com/aida-public/AB6AXuCdsVSRcCTW0PT10yeY8UuLhtClein1TP250HS0O11SyQZ-rplzSb0E4EQSHx1pqrHjAX6eeubN_N3bcwnCEXGN4LFddluyBZuo2dJe_0SuX09KJCThT9nqvLbezHDBWS7tjzRoF-PklXLaQqkrWJzWTRNesD5Q9A9fdJQwX2jyGoLOR2DWIMTCY49J9SJfK0BeWaF97NLrK5HbsyUATJ_mFQRfLy_Jr49hfDC5psu8SIoOb5in5EPQV_d2h927V6MFD9Z7rKugxJQ", post.data.title, "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" %}
+              </div>
+            </a>
+            <div class="p-6">
+              <span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest mb-2 block">Analysis</span>
+              <h3 class="font-headline font-bold text-xl mb-3 leading-tight group-hover:text-primary transition-colors">
+                <a href="{{ post.url }}">{{ post.data.title }}</a>
+              </h3>
+              <p class="text-sm text-on-surface-variant line-clamp-2">{{ post.data.description }}</p>
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

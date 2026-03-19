@@ -1,0 +1,74 @@
+[
+  {
+    "id": "lex",
+    "name": "Lex.page",
+    "cost": 10,
+    "icon": "edit_note",
+    "category": "Writing",
+    "description": "AI-powered writing assistant"
+  },
+  {
+    "id": "jasper",
+    "name": "Jasper AI",
+    "cost": 39,
+    "icon": "article",
+    "category": "Marketing",
+    "description": "Enterprise content engine"
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly Go",
+    "cost": 12,
+    "icon": "spellcheck",
+    "category": "Writing",
+    "description": "Communication assistant"
+  },
+  {
+    "id": "make",
+    "name": "Make.com",
+    "cost": 9,
+    "icon": "hub",
+    "category": "Automation",
+    "description": "Visual workflow automation"
+  },
+  {
+    "id": "reclaim",
+    "name": "Reclaim.ai",
+    "cost": 8,
+    "icon": "schedule",
+    "category": "Ops",
+    "description": "Smart calendar focus"
+  },
+  {
+    "id": "fathom",
+    "name": "Fathom",
+    "cost": 14,
+    "icon": "query_stats",
+    "category": "Analytics",
+    "description": "Privacy-first analytics"
+  },
+  {
+    "id": "descript",
+    "name": "Descript",
+    "cost": 12,
+    "icon": "auto_videocam",
+    "category": "Creative",
+    "description": "Video/Podcast editing"
+  },
+  {
+    "id": "convertkit",
+    "name": "ConvertKit",
+    "cost": 9,
+    "icon": "mail",
+    "category": "Growth",
+    "description": "Creator marketing network"
+  },
+  {
+    "id": "manychat",
+    "name": "ManyChat",
+    "cost": 15,
+    "icon": "smart_toy",
+    "category": "Chat",
+    "description": "IG/FB Automation"
+  }
+]

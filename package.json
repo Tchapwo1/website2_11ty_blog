@@ -1,0 +1,21 @@
+{
+  "name": "website2-11ty-blog",
+  "version": "1.0.0",
+  "description": "AI tools and software reviews for solo entrepreneurs.",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "postbuild": "pagefind --site _site"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^5.0.0",
+    "pagefind": "^1.4.0"
+  }
+}

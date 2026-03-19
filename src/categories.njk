@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+permalink: /categories/{{ tag | slugify }}/
+eleventyComputed:
+  title: "{{ tag }}"
+---
+
+<div class="pt-12">
+  <!-- Category Header -->
+  <section class="max-w-7xl mx-auto px-8 mb-16">
+    <span class="text-[0.75rem] font-bold uppercase tracking-[0.05em] text-on-tertiary-container bg-tertiary-fixed px-3 py-1 rounded-sm">Topic Archive</span>
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter mt-6 mb-8 text-primary">
+      {{ tag }}
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed max-w-3xl">
+      Everything we've published about {{ tag | lower }}. Discover specialized insights, curated tools, and expert-reviewed strategies to help you master this area as a solo entrepreneur.
+    </p>
+  </section>
+
+  <!-- Featured Section for Category -->
+  {% set posts = collections[tag] | reverse %}
+  <section class="max-w-7xl mx-auto px-8 mb-24">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-bold tracking-tight text-blue-950">Curated Analytics: {{ tag }}</h2>
+      <div class="h-[1px] flex-grow mx-8 bg-surface-container-highest/30"></div>
+      <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">verified</span>
+    </div>
+
+    <!-- Category Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {% for post in posts %}
+        <article class="group">
+          <a href="{{ post.url }}">
+            <div class="aspect-[16/10] bg-surface-container-high rounded-lg mb-6 overflow-hidden">
+              {% image "https://lh3.googleusercontent.com/aida-public/AB6AXuC4Cmd7FJQBIIXkyvNOdHFaZBT8RLsUOrTM2b9PRlDkKbFAczGlZDydM-eq2CZO-vPSoBLG_dHRA5DxyFak4aCfN5oXGAtrX2qjhFGocbrZ5Ur1tUwh_Uhhkb6zFrwNCLvKxhe7zK7XOsTOEfRADkrKonjRooeFmT5Y_TRkgXfRYdfTTZgSrCo_BJhT4YPsU__xJUW8EIVoCJSow46K3qTVpzroUXEqQy5ijDFOcaH7mx_dmuWtu395idPCubE_NvuIev_rvHAaVFs", post.data.title, "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" %}
+            </div>
+          </a>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3 text-[0.7rem] font-bold uppercase tracking-widest text-slate-500">
+              <span>{{ tag }}</span>
+              <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+              <span>10 Min Read</span>
+            </div>
+            <h3 class="text-xl font-bold text-blue-950 leading-snug group-hover:text-primary transition-colors">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+              {{ post.data.description }}
+            </p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination/Back Link -->
+    <div class="mt-20 flex flex-col items-center">
+      <div class="w-16 h-[1px] bg-outline-variant/30 mb-8"></div>
+      <a href="/archive/" class="bg-surface-container-high hover:bg-surface-container-highest text-primary font-bold px-10 py-4 rounded-full transition-all duration-300 group inline-flex items-center gap-2">
+        <span class="material-symbols-outlined align-middle transition-transform group-hover:-translate-x-1">arrow_back</span>
+        Back to Hub
+      </a>
+    </div>
+  </section>
+</div>
