@@ -40,6 +40,38 @@
     "description": "Integrated AI workspace for project management & notes"
   },
   {
+    "id": "spellbook",
+    "name": "Spellbook",
+    "cost": 30,
+    "icon": "gavel",
+    "category": "Legal",
+    "description": "AI contract review and drafting inside Microsoft Word"
+  },
+  {
+    "id": "ailawyer",
+    "name": "AI Lawyer",
+    "cost": 10,
+    "icon": "balance",
+    "category": "Legal",
+    "description": "Instant legal answers and document summarization"
+  },
+  {
+    "id": "freshbooks",
+    "name": "FreshBooks AI",
+    "cost": 15,
+    "icon": "payments",
+    "category": "Finance",
+    "description": "Automated bookkeeping and intelligent invoicing"
+  },
+  {
+    "id": "zohobooks",
+    "name": "Zoho Books",
+    "cost": 15,
+    "icon": "account_balance",
+    "category": "Finance",
+    "description": "AI-driven expense categorization and reporting"
+  },
+  {
     "id": "taplio",
     "name": "Taplio",
     "cost": 39,

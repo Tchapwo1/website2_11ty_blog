@@ -25,18 +25,18 @@ title: Resources
   <!-- Tool Categories Navigation (Sticky) -->
   <div class="sticky top-24 z-40 mb-12 py-4 bg-surface/50 backdrop-blur-md px-8 overflow-x-auto border-y border-outline-variant/10">
     <div class="flex items-center space-x-4 min-w-max max-w-7xl mx-auto w-full">
-      <button class="bg-primary text-on-primary px-6 py-2 rounded-lg text-sm font-semibold">All Resources</button>
-      <button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Writing & Content</button>
-      <button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Marketing Ops</button>
-      <button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Automation</button>
-      <button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Research</button>
-      <button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Visual Design</button>
+      <button onclick="document.getElementById('all').scrollIntoView({behavior: 'smooth'})" class="bg-primary text-on-primary px-6 py-2 rounded-lg text-sm font-semibold">All Resources</button>
+      <button onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Content</button>
+      <button onclick="document.getElementById('automation').scrollIntoView({behavior: 'smooth'})" class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Automation</button>
+      <button onclick="document.getElementById('legal').scrollIntoView({behavior: 'smooth'})" class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Legal & Governance</button>
+      <button onclick="document.getElementById('finance').scrollIntoView({behavior: 'smooth'})" class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container-highest transition-colors">Financial Intel</button>
+      <button onclick="document.getElementById('blueprints').scrollIntoView({behavior: 'smooth'})" class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-6 py-2 rounded-lg text-sm font-bold border border-tertiary-fixed-dim shadow-sm">Blueprint Vault</button>
     </div>
   </div>
 
   <div class="max-w-7xl mx-auto px-8">
     <!-- Section: Content & Writing -->
-    <section class="mb-20">
+    <section id="content" class="mb-20">
       <div class="flex items-center gap-4 mb-8">
         <h2 class="text-3xl font-bold tracking-tight">Content & Writing</h2>
         <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
@@ -92,7 +92,7 @@ title: Resources
     </section>
 
     <!-- Section: Automation & Workflow -->
-    <section class="mb-20">
+    <section id="automation" class="mb-20">
       <div class="flex items-center gap-4 mb-8">
         <h2 class="text-3xl font-bold tracking-tight">Automation & Workflow</h2>
         <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
@@ -143,7 +143,7 @@ title: Resources
     </section>
 
     <!-- Section: Marketing & Growth -->
-    <section class="mb-20">
+    <section id="marketing" class="mb-20">
       <div class="flex items-center gap-4 mb-8">
         <h2 class="text-3xl font-bold tracking-tight">Marketing & Growth</h2>
         <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
@@ -181,6 +181,111 @@ title: Resources
           <h4 class="font-bold text-lg mb-2">ManyChat</h4>
           <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">Automate interactive conversations on IG and FB.</p>
           <a class="text-primary text-xs font-bold uppercase tracking-widest hover:underline" href="#">Explore Tool</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Legal & Governance -->
+    <section id="legal" class="mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-3xl font-bold tracking-tight">Legal & Governance</h2>
+        <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/10 flex gap-6">
+           <div class="w-16 h-16 rounded-2xl bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container flex-shrink-0">
+             <span class="material-symbols-outlined text-3xl">gavel</span>
+           </div>
+           <div>
+             <h3 class="text-xl font-bold mb-2">Spellbook AI</h3>
+             <p class="text-on-surface-variant text-sm mb-4">Professional contract review directly in Word. It points out missing clauses and aggressive language in seconds.</p>
+             <a href="#" class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">Contract Audit <span class="material-symbols-outlined text-sm">north_east</span></a>
+           </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/10 flex gap-6">
+           <div class="w-16 h-16 rounded-2xl bg-secondary-container/10 flex items-center justify-center text-secondary flex-shrink-0">
+             <span class="material-symbols-outlined text-3xl">balance</span>
+           </div>
+           <div>
+             <h3 class="text-xl font-bold mb-2">AI Lawyer</h3>
+             <p class="text-on-surface-variant text-sm mb-4">Instant legal analysis for solo founders. Summarize complex Terms of Service or draft simple NDAs without a $400/hr bill.</p>
+             <a href="#" class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">Get Legal Brief <span class="material-symbols-outlined text-sm">north_east</span></a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Financial Intelligence -->
+    <section id="finance" class="mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-3xl font-bold tracking-tight">Financial Intelligence</h2>
+        <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/10 flex gap-6">
+           <div class="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center text-green-700 flex-shrink-0">
+             <span class="material-symbols-outlined text-3xl">payments</span>
+           </div>
+           <div>
+             <h3 class="text-xl font-bold mb-2">FreshBooks AI</h3>
+             <p class="text-on-surface-variant text-sm mb-4">Intelligent invoicing and expense tracking. Its AI automatically categorizes your bank feed for a stress-free tax season.</p>
+             <a href="#" class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">Audit Finances <span class="material-symbols-outlined text-sm">north_east</span></a>
+           </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/10 flex gap-6">
+           <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-700 flex-shrink-0">
+             <span class="material-symbols-outlined text-3xl">account_balance</span>
+           </div>
+           <div>
+             <h3 class="text-xl font-bold mb-2">Zoho Books</h3>
+             <p class="text-on-surface-variant text-sm mb-4">The ultimate AI bookkeeping partner for solo ventures. Features include automated bank rules and predictive cash flow alerts.</p>
+             <a href="#" class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">Predict Cashflow <span class="material-symbols-outlined text-sm">north_east</span></a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Verne's Blueprint Vault (NEW) -->
+    <section id="blueprints" class="mb-20">
+      <div class="bg-slate-900 rounded-3xl p-12 text-white border border-slate-800 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+        
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="material-symbols-outlined text-tertiary-fixed">architecture</span>
+            <h2 class="text-3xl font-extrabold tracking-tight">Verne's Blueprint Vault</h2>
+          </div>
+          <p class="text-slate-400 text-lg mb-12 max-w-2xl">Don't just use tools. Use **blueprints**. Copy-paste these battle-tested AI instructions to solve complex business friction instantly.</p>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Blueprint 1 -->
+            <div class="bg-slate-800/50 rounded-2xl p-8 border border-slate-700/50">
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-primary">Strategic Asset</span>
+                <span class="material-symbols-outlined text-slate-500">content_copy</span>
+              </div>
+              <h3 class="text-xl font-bold mb-4">The Boardroom Simulation Prompt</h3>
+              <p class="text-slate-400 text-sm mb-6">Transforms any LLM into a panel of experts to stress-test your strategy. Includes CFO, UX Lead, and Competitor CMO personas.</p>
+              <div class="bg-slate-950 rounded-lg p-4 font-mono text-[10px] text-slate-300 line-clamp-3 mb-6 border border-slate-800">
+                "Act as a world-class, cynical CFO... Look for hidden overhead, unrealistic CAC assumptions, and threats to my runway. Be blunt."
+              </div>
+              <a href="/posts/ai-advisory-boardroom-simulation/" class="bg-white text-slate-900 px-6 py-2 rounded-full text-xs font-bold inline-block hover:bg-slate-200 transition-colors">Access Blueprint</a>
+            </div>
+            
+            <!-- Blueprint 2 -->
+            <div class="bg-slate-800/50 rounded-2xl p-8 border border-slate-700/50">
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-primary">Automation Asset</span>
+                <span class="material-symbols-outlined text-slate-500">hub</span>
+              </div>
+              <h3 class="text-xl font-bold mb-4">The Infinite Lead Enricher</h3>
+              <p class="text-slate-400 text-sm mb-6">A Make.com blueprint that auto-researches incoming leads via Perplexity AI and syncs their profile to your CRM with a 'Hook' idea.</p>
+              <div class="bg-slate-950 rounded-lg p-4 font-mono text-[10px] text-slate-300 line-clamp-3 mb-6 border border-slate-800">
+                // Make.com JSON Blueprint Structure: { "module": "Perplexity_AI_Research", "action": "Search_LinkedIn_Profile", "output": "Personalized_Hook" }
+              </div>
+              <button disabled class="bg-slate-700 text-slate-400 px-6 py-2 rounded-full text-xs font-bold inline-block cursor-not-allowed">Coming Soon</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
