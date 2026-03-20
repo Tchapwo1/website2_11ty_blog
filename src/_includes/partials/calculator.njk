@@ -46,10 +46,14 @@
         <div class="space-y-4">
           <div class="p-4 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-xl flex items-center justify-between">
             <span class="text-xs font-bold uppercase tracking-widest">Efficiency Multiplier</span>
-            <span class="text-lg font-bold">12.5x</span>
+            <span id="calc-multiplier" class="text-lg font-bold">0x</span>
+          </div>
+          <div class="p-4 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 rounded-xl flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-widest">Monthly Savings</span>
+            <span id="calc-savings" class="text-lg font-bold">$0</span>
           </div>
           <p class="text-xs text-on-surface-variant font-medium italic">
-            *Compared to the average $1,200/mo cost of an entry-level virtual assistant.
+            *Benchmarked against an entry-level Virtual Assistant ($1,200/mo).
           </p>
           <button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold shadow-lg hover:shadow-xl hover:translate-y-[-2px] transition-all">
             Unlock Full Optimization Plan
@@ -62,8 +66,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const totalEl = document.getElementById('calc-total');
-    const checkboxes = document.querySelectorAll('.tool-checkbox');
+    const multiplierEl = document.getElementById('calc-multiplier');
+    const savingsEl = document.getElementById('calc-savings');
+    const VA_COST = 1200;
     
     function calculate() {
         let total = 0;
@@ -73,7 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Simple counter animation
+        // Multiplier calculation
+        const multiplier = total > 0 ? (VA_COST / total).toFixed(1) : 0;
+        const savings = Math.max(0, VA_COST - total);
+        
+        // Update values
+        multiplierEl.innerText = multiplier + 'x';
+        savingsEl.innerText = '$' + savings.toLocaleString();
+        
+        // Simple counter animation for total
         const current = parseInt(totalEl.innerText);
         if (current !== total) {
            animateValue(totalEl, current, total, 400);

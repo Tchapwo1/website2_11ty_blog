@@ -2,10 +2,10 @@
   {
     "id": "lex",
     "name": "Lex.page",
-    "cost": 10,
+    "cost": 18,
     "icon": "edit_note",
     "category": "Writing",
-    "description": "AI-powered writing assistant"
+    "description": "AI-powered writing & research assistant (Pro Plan)"
   },
   {
     "id": "jasper",
@@ -13,15 +13,47 @@
     "cost": 39,
     "icon": "article",
     "category": "Marketing",
-    "description": "Enterprise content engine"
+    "description": "Enterprise-grade content engine (Annual baseline)"
   },
   {
-    "id": "grammarly",
-    "name": "Grammarly Go",
-    "cost": 12,
-    "icon": "spellcheck",
-    "category": "Writing",
-    "description": "Communication assistant"
+    "id": "perplexity",
+    "name": "Perplexity AI",
+    "cost": 20,
+    "icon": "travel_explore",
+    "category": "Research",
+    "description": "Advanced AI search and real-time knowledge discovery"
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "cost": 5,
+    "icon": "record_voice_over",
+    "category": "Creative",
+    "description": "High-fidelity AI voice generation & cloning"
+  },
+  {
+    "id": "notion",
+    "name": "Notion AI",
+    "cost": 20,
+    "icon": "inventory_2",
+    "category": "Productivity",
+    "description": "Integrated AI workspace for project management & notes"
+  },
+  {
+    "id": "taplio",
+    "name": "Taplio",
+    "cost": 39,
+    "icon": "trending_up",
+    "category": "Growth",
+    "description": "LinkedIn personal brand automation & AI writing"
+  },
+  {
+    "id": "chatbase",
+    "name": "Chatbase",
+    "cost": 40,
+    "icon": "support_agent",
+    "category": "Support",
+    "description": "Custom AI chatbots trained on your own data"
   },
   {
     "id": "make",
@@ -29,7 +61,7 @@
     "cost": 9,
     "icon": "hub",
     "category": "Automation",
-    "description": "Visual workflow automation"
+    "description": "Visual workflow automation (Core Plan)"
   },
   {
     "id": "reclaim",
@@ -37,38 +69,30 @@
     "cost": 8,
     "icon": "schedule",
     "category": "Ops",
-    "description": "Smart calendar focus"
+    "description": "Smart calendar focus management"
   },
   {
     "id": "fathom",
     "name": "Fathom",
-    "cost": 14,
+    "cost": 15,
     "icon": "query_stats",
     "category": "Analytics",
-    "description": "Privacy-first analytics"
+    "description": "Privacy-first analytics pipeline"
   },
   {
     "id": "descript",
     "name": "Descript",
-    "cost": 12,
+    "cost": 15,
     "icon": "auto_videocam",
     "category": "Creative",
-    "description": "Video/Podcast editing"
+    "description": "Script-based video/audio editor"
   },
   {
     "id": "convertkit",
     "name": "ConvertKit",
-    "cost": 9,
+    "cost": 15,
     "icon": "mail",
     "category": "Growth",
-    "description": "Creator marketing network"
-  },
-  {
-    "id": "manychat",
-    "name": "ManyChat",
-    "cost": 15,
-    "icon": "smart_toy",
-    "category": "Chat",
-    "description": "IG/FB Automation"
+    "description": "Creator marketing & email network"
   }
 ]

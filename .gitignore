@@ -3,4 +3,5 @@ _site/
 .gemini/
 .DS_Store
 .env
+.cache/
 *.log

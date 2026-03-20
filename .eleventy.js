@@ -41,6 +41,19 @@ module.exports = function(eleventyConfig) {
     return d.toLocaleDateString();
   });
 
+  eleventyConfig.addCollection("tagList", function(collectionApi) {
+    const site = require("./src/_data/site.json");
+    const tags = new Set(site.categories || []);
+    collectionApi.getAll().forEach(item => {
+      (item.data.tags || []).forEach(tag => {
+        if (!["all", "nav", "post", "posts"].includes(tag)) {
+          tags.add(tag);
+        }
+      });
+    });
+    return Array.from(tags).sort();
+  });
+
   return {
     dir: {
       input: "src",
