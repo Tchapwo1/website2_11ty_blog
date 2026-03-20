@@ -1,0 +1,41 @@
+[
+  {
+    "id": "claude-vs-gpt",
+    "title": "Claude 3.5 Sonnet vs GPT-4o",
+    "winner": "Claude 3.5 Sonnet",
+    "summary": "For pure strategic writing and complex coding, Claude 3.5 wins. For universal utility and voice interaction, GPT-4o remains the king.",
+    "metrics": [
+      { "name": "Strategic Nuance", "claude": "Elite", "gpt": "Strong" },
+      { "name": "Coding Ability", "claude": "Exceptional", "gpt": "Very Good" },
+      { "name": "Speed", "claude": "Fast", "gpt": "Instant" },
+      { "name": "Context Window", "claude": "200k", "gpt": "128k" }
+    ],
+    "verdict": "Use Claude for your 'Boardroom' work and GPT-4o for your daily admin and creative brainstorming."
+  },
+  {
+    "id": "perplexity-vs-google",
+    "title": "Perplexity AI vs Google Search",
+    "winner": "Perplexity AI",
+    "summary": "The era of clicking 10 blue links is over. Perplexity provides verified answers, while Google provides ads and SEO spam.",
+    "metrics": [
+      { "name": "Research Speed", "perplexity": "Instant", "google": "Slow" },
+      { "name": "Source Verification", "perplexity": "Citations Built-in", "google": "Manual Check" },
+      { "name": "Ad-Free", "perplexity": "Yes", "google": "No" },
+      { "name": "Depth", "perplexity": "High", "google": "Variable" }
+    ],
+    "verdict": "Perplexity is the researcher's choice. Google is now just for local business lookups and shopping."
+  },
+  {
+    "id": "lex-vs-jasper",
+    "title": "Lex.page vs Jasper AI",
+    "winner": "Lex.page",
+    "summary": "Jasper is for marketing departments. Lex is for writers who want to scale their own unique voice.",
+    "metrics": [
+      { "name": "Brand Voice Control", "lex": "Organic", "jasper": "Synthetic" },
+      { "name": "UI Friction", "lex": "Near-Zero", "jasper": "Moderate" },
+      { "name": "Collaborative Editing", "lex": "Real-time", "jasper": "Basic" },
+      { "name": "Price", "lex": "$18/mo", "jasper": "$49+/mo" }
+    ],
+    "verdict": "If you are a solo founder building a personal brand, Lex is your essential writing partner."
+  }
+]

@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+title: Tool Comparisons
+description: "Head-to-head expert analysis of the leading AI tools for solo founders."
+---
+
+<div class="pt-24 pb-20 px-8 max-w-7xl mx-auto">
+  <header class="mb-20 text-center lg:text-left">
+    <span class="label-md uppercase tracking-widest text-primary font-bold text-xs mb-4 block">The Decision Engine</span>
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-on-surface mb-6 leading-tight">
+      Tool vs Tool: <span class="text-primary-container">Expert Choice</span>
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed font-body max-w-2xl">
+      In the fast-moving AI frontier, choosing the wrong stack is expensive. We’ve battle-tested the giants so you don't have to.
+    </p>
+  </header>
+
+  <div class="space-y-24">
+    {% for comparison in comparisons %}
+    <section id="{{ comparison.id }}" class="scroll-mt-32">
+      <div class="flex flex-col lg:flex-row gap-12 items-start">
+        <!-- Text Content -->
+        <div class="lg:w-1/2">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary-container/20 text-primary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-primary-container/30">Head-to-Head</span>
+            <span class="text-on-surface-variant text-xs font-bold">{{ comparison.title }}</span>
+          </div>
+          <h2 class="text-4xl font-black tracking-tighter mb-6">{{ comparison.title }}</h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed mb-8">{{ comparison.summary }}</p>
+          
+          <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/10">
+            <h3 class="text-sm font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-lg">verified</span>
+              The Verdict
+            </h3>
+            <p class="text-2xl font-bold text-on-surface leading-tight mb-4">🏆 Overall Winner: <span class="text-primary">{{ comparison.winner }}</span></p>
+            <p class="text-on-surface-variant italic font-body">"{{ comparison.verdict }}"</p>
+          </div>
+        </div>
+
+        <!-- Metric Table -->
+        <div class="lg:w-1/2 w-full">
+          <div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-xl border border-outline-variant/10">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="bg-surface-container-high/50 border-b border-outline-variant/10 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                  <th class="p-6">Metric</th>
+                  <th class="p-6">{{ comparison.title.split(' vs ')[0] }}</th>
+                  <th class="p-6">{{ comparison.title.split(' vs ')[1] }}</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-outline-variant/10">
+                {% for metric in comparison.metrics %}
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-6 font-bold text-sm text-primary">{{ metric.name }}</td>
+                  <td class="p-6 text-sm text-on-surface-variant">
+                    {% set val1 = metric[comparison.id.split('-vs-')[0]] %}
+                    <span class="{% if val1 == 'Elite' or val1 == 'Exceptional' or val1 == 'Yes' %}text-primary font-bold{% endif %}">{{ val1 }}</span>
+                  </td>
+                  <td class="p-6 text-sm text-on-surface-variant">
+                    {% set val2 = metric[comparison.id.split('-vs-')[1]] %}
+                    <span class="{% if val2 == 'Elite' or val2 == 'Exceptional' or val2 == 'Yes' %}text-primary font-bold{% endif %}">{{ val2 }}</span>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+
+  <!-- Final CTA -->
+  <footer class="mt-32 text-center bg-primary-container rounded-3xl p-12">
+    <h3 class="text-3xl font-black text-white mb-4">Which one is right for YOU?</h3>
+    <p class="text-blue-100 mb-8">Take our 2-minute diagnostic and get a personalized tool stack recommendation.</p>
+    <a href="/quiz/" class="bg-white text-primary px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform inline-block">Start Stack Quiz</a>
+  </footer>
+</div>
+
+<style>
+  th, td { border: none !important; }
+</style>

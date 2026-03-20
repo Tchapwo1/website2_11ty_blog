@@ -1,0 +1,196 @@
+---
+layout: layouts/base.njk
+title: Solo Stack Finder
+description: "A 2-minute diagnostic tool to find your ideal AI software stack based on your unique founder archetype."
+---
+
+<div class="min-h-screen pt-24 pb-20 px-4">
+  <div class="max-w-3xl mx-auto">
+    <!-- Quiz Container -->
+    <div id="quiz-container" class="bg-surface-container-low rounded-3xl p-8 md:p-12 shadow-2xl border border-outline-variant/10 relative overflow-hidden">
+      <!-- Progress Bar -->
+      <div class="absolute top-0 left-0 h-1 bg-primary transition-all duration-500" id="progress-bar" style="width: 0%"></div>
+
+      <!-- Intro State -->
+      <div id="quiz-intro" class="text-center py-12">
+        <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+          <span class="material-symbols-outlined text-4xl text-primary">psychology</span>
+        </div>
+        <h1 class="text-4xl font-extrabold tracking-tight mb-4">Discover Your <span class="text-primary">Solo Archetype</span></h1>
+        <p class="text-on-surface-variant mb-10 max-w-md mx-auto leading-relaxed">Stop guessing which tools you need. Answer 6 strategic questions to uncover your ideal AI engine.</p>
+        <button onclick="startQuiz()" class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:translate-y-[-2px] transition-all">Start Diagnostic</button>
+      </div>
+
+      <!-- Question State (Template) -->
+      <div id="quiz-question" class="hidden">
+        <span id="question-count" class="text-xs font-bold text-primary uppercase tracking-widest mb-4 block">Question 1 of 6</span>
+        <h2 id="question-text" class="text-3xl font-bold mb-10">What is your primary bottleneck right now?</h2>
+        
+        <div id="options-container" class="space-y-4">
+          <!-- Options will be injected here -->
+        </div>
+      </div>
+
+      <!-- Results State -->
+      <div id="quiz-results" class="hidden">
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest mb-4 block">Your Archetype Is:</span>
+          <h2 id="archetype-name" class="text-5xl font-black tracking-tighter mb-4">The Content Visionary</h2>
+          <p id="archetype-desc" class="text-lg text-on-surface-variant max-w-lg mx-auto leading-relaxed">You turn ideas into empires. Your focus is on high-volume, high-quality output across multiple channels.</p>
+        </div>
+
+        <div class="bg-surface-container-highest rounded-2xl p-8 mb-10">
+          <h3 class="text-sm font-bold uppercase tracking-widest mb-6 border-b border-outline-variant/20 pb-4">Your Recommended Stack</h3>
+          <div id="recommended-tools" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Tools will be injected here -->
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/resources/" class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold text-center">Explore Full Directory</a>
+          <button onclick="location.reload()" class="border-2 border-outline-variant/30 text-on-surface px-8 py-3 rounded-full font-bold">Retake Quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const questions = [
+    {
+      text: "What is your primary business bottleneck?",
+      options: [
+        { text: "Content Creation: I need to write/produce more.", weight: { content: 5, growth: 2 } },
+        { text: "Operations: I am drowning in admin/emails.", weight: { automation: 5, ops: 2 } },
+        { text: "Growth: I have a product but need leads.", weight: { growth: 5, content: 2 } },
+        { text: "Structure: I need better systems and legal safety.", weight: { ops: 5, automation: 2 } }
+      ]
+    },
+    {
+      text: "How do you prefer to navigate your day?",
+      options: [
+        { text: "Creative Flow: Working on deep, long-form ideas.", weight: { content: 3, ops: 1 } },
+        { text: "Efficiency First: Building engines that run without me.", weight: { automation: 5, growth: 1 } },
+        { text: "The Hunt: Finding prospects and making connections.", weight: { growth: 5, content: 1 } },
+        { text: "Organized Control: Precise lists and clear margins.", weight: { ops: 5, automation: 2 } }
+      ]
+    },
+    {
+      text: "Your budget for AI tools is...",
+      options: [
+        { text: "Bootstrapping (Under $50/mo)", weight: { content: 2, automation: 2, ops: 2, growth: 2 } },
+        { text: "Strategic Scaling ($50 - $200/mo)", weight: { content: 4, automation: 4, growth: 4 } },
+        { text: "Elite Performance ($200+ /mo)", weight: { growth: 5, ops: 5, automation: 3 } }
+      ]
+    },
+    {
+      text: "Which frontier fascinates you most?",
+      options: [
+        { text: "Human-AI Collaboration (Writing/Voice)", weight: { content: 5 } },
+        { text: "The Invisible Hand (Ghost Automations)", weight: { automation: 5 } },
+        { text: "Network Dominance (Social Growth)", weight: { growth: 5 } },
+        { text: "The Secure Stronghold (Legal/Finance)", weight: { ops: 5 } }
+      ]
+    }
+  ];
+
+  const archetypes = {
+    content: {
+      name: "The Content Visionary",
+      desc: "You turn ideas into empires. Your focus is on high-volume, high-quality output across multiple channels.",
+      tools: ["Lex.page", "Jasper AI", "ElevenLabs", "Descript"]
+    },
+    automation: {
+      name: "The Automation Architect",
+      desc: "You believe that if a task is repeated twice, it should be automated once. You build digital ghosts that work while you sleep.",
+      tools: ["Make.com", "Reclaim.ai", "Notion AI", "Chatbase"]
+    },
+    growth: {
+      name: "The Growth Scientist",
+      desc: "You live for the graph that goes 'Up and to the Right.' You use AI to find, enrich, and convert leads at scale.",
+      tools: ["Taplio", "ConvertKit", "Perplexity AI", "Fathom"]
+    },
+    ops: {
+      name: "The Operations Generalist",
+      desc: "Stability is your superpower. You use AI to ensure your legal, financial, and organizational systems are bulletproof.",
+      tools: ["Spellbook", "FreshBooks AI", "Notion AI", "AI Lawyer"]
+    }
+  };
+
+  let currentQuestion = 0;
+  let scores = { content: 0, automation: 0, growth: 0, ops: 0 };
+
+  function startQuiz() {
+    document.getElementById('quiz-intro').classList.add('hidden');
+    document.getElementById('quiz-question').classList.remove('hidden');
+    showQuestion();
+  }
+
+  function showQuestion() {
+    const q = questions[currentQuestion];
+    document.getElementById('question-count').innerText = `Question ${currentQuestion + 1} of ${questions.length}`;
+    document.getElementById('question-text').innerText = q.text;
+    document.getElementById('progress-bar').style.width = `${(currentQuestion / questions.length) * 100}%`;
+
+    const container = document.getElementById('options-container');
+    container.innerHTML = '';
+    
+    q.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = "w-full text-left p-6 rounded-2xl border-2 border-outline-variant/20 hover:border-primary hover:bg-primary/5 transition-all flex justify-between items-center group";
+      btn.innerHTML = `
+        <span class="font-bold text-on-surface">${opt.text}</span>
+        <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-primary">arrow_forward</span>
+      `;
+      btn.onclick = () => handleAnswer(opt.weight);
+      container.appendChild(btn);
+    });
+  }
+
+  function handleAnswer(weight) {
+    for (let key in weight) {
+      scores[key] += weight[key];
+    }
+    
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+      showQuestion();
+    } else {
+      showResults();
+    }
+  }
+
+  function showResults() {
+    document.getElementById('quiz-question').classList.add('hidden');
+    document.getElementById('quiz-results').classList.remove('hidden');
+    document.getElementById('progress-bar').style.width = `100%`;
+
+    // Calculate winner
+    let winner = 'content';
+    let maxScore = -1;
+    for (let key in scores) {
+      if (scores[key] > maxScore) {
+        maxScore = scores[key];
+        winner = key;
+      }
+    }
+
+    const arch = archetypes[winner];
+    document.getElementById('archetype-name').innerText = arch.name;
+    document.getElementById('archetype-desc').innerText = arch.desc;
+
+    const toolsContainer = document.getElementById('recommended-tools');
+    toolsContainer.innerHTML = '';
+    arch.tools.forEach(toolName => {
+      const card = document.createElement('div');
+      card.className = "bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10 flex items-center gap-3";
+      card.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-sm">construction</span>
+        </div>
+        <span class="font-bold text-sm">${toolName}</span>
+      `;
+      toolsContainer.appendChild(card);
+    });
+  }
+</script>

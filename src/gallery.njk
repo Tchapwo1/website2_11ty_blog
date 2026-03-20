@@ -1,0 +1,127 @@
+---
+layout: layouts/base.njk
+title: Captain Nemo’s Gallery
+description: "A vault of high-end AI-generated aesthetics and the prompts that built them."
+---
+
+<div class="pt-24 pb-20 px-8 max-w-7xl mx-auto">
+  <header class="mb-16 text-center lg:text-left">
+    <span class="label-md uppercase tracking-widest text-primary font-bold text-xs mb-4 block">The Visual Frontier</span>
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-on-surface mb-6 leading-tight">
+      Captain Nemo’s <span class="text-primary-container">Vault</span>
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed font-body max-w-2xl">
+      Explore the aesthetics of the AI frontier. Every visual here was generated using precise engineering. Click to copy the prompts and build your own reality.
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Gallery Card 1 -->
+    <div class="group bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/10 hover:shadow-2xl transition-all duration-500">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        {% image "C:/Users/paris/.gemini/antigravity/brain/670937ab-12d5-409b-9b5d-d8e5a432127e/nemo_observatory_1773969452568.png", "The Observatory", "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" %}
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+      <div class="p-8">
+        <h3 class="text-xl font-bold mb-4">The Underwater Observatory</h3>
+        <p class="text-sm text-on-surface-variant mb-6 line-clamp-2 italic">"A high-tech, futuristic brass-and-glass underwater observatory with glowing holographic charts..."</p>
+        <button onclick="copyPrompt(this, 'A high-tech, futuristic brass-and-glass underwater observatory with glowing holographic charts and mechanical brass arms, deep ocean blue lighting, steampunk aesthetic, ultra-realistic, cinematic lighting, 8k.')" class="w-full bg-surface-container-highest text-on-surface px-6 py-3 rounded-full font-bold text-xs flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all">
+          <span class="material-symbols-outlined text-sm">content_copy</span>
+          Copy Image Prompt
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Card 2 -->
+    <div class="group bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/10 hover:shadow-2xl transition-all duration-500">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        {% image "C:/Users/paris/.gemini/antigravity/brain/670937ab-12d5-409b-9b5d-d8e5a432127e/algorithm_map_1773969466148.png", "Algorithm Map", "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" %}
+      </div>
+      <div class="p-8">
+        <h3 class="text-xl font-bold mb-4">The Algorithm Map</h3>
+        <p class="text-sm text-on-surface-variant mb-6 line-clamp-2 italic">"An algorithmic steampunk map of the Internet's deep frontiers, glowing gold ley lines..."</p>
+        <button onclick="copyPrompt(this, 'An algorithmic steampunk map of the Internet\'s deep frontiers, glowing gold ley lines on aged parchment, intricate clockwork gears, 3D data visualization as physical brass objects, misty atmosphere, high-end editorial style.')" class="w-full bg-surface-container-highest text-on-surface px-6 py-3 rounded-full font-bold text-xs flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all">
+          <span class="material-symbols-outlined text-sm">content_copy</span>
+          Copy Image Prompt
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Card 3 -->
+    <div class="group bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/10 hover:shadow-2xl transition-all duration-500">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        {% image "C:/Users/paris/.gemini/antigravity/brain/670937ab-12d5-409b-9b5d-d8e5a432127e/bubble_library_ai_1773969481261.png", "Bubble Library", "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" %}
+      </div>
+      <div class="p-8">
+        <h3 class="text-xl font-bold mb-4">The Bioluminescent Library</h3>
+        <p class="text-sm text-on-surface-variant mb-6 line-clamp-2 italic">"A floating AI library inside a massive glowing bubble submerged in a deep bioluminescent ocean..."</p>
+        <button onclick="copyPrompt(this, 'A floating AI library inside a massive glowing bubble submerged in a deep bioluminescent ocean, ancient leather books floating alongside holographic screens, jellyfish-like lighting, Jules Verne adventure style.')" class="w-full bg-surface-container-highest text-on-surface px-6 py-3 rounded-full font-bold text-xs flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all">
+          <span class="material-symbols-outlined text-sm">content_copy</span>
+          Copy Image Prompt
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Card 4 -->
+    <div class="group bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/10 hover:shadow-2xl transition-all duration-500">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        {% image "C:/Users/paris/.gemini/antigravity/brain/670937ab-12d5-409b-9b5d-d8e5a432127e/solo_entrepreneur_interface_ai_1773969496393.png", "The Interface", "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" %}
+      </div>
+      <div class="p-8">
+        <h3 class="text-xl font-bold mb-4">The Cognition Interface</h3>
+        <p class="text-sm text-on-surface-variant mb-6 line-clamp-2 italic">"Portrait of a Neo-Victorian solo entrepreneur wearing high-tech brass goggles..."</p>
+        <button onclick="copyPrompt(this, 'Portrait of a Neo-Victorian solo entrepreneur wearing high-tech brass goggles with glowing green lenses, using a complex mechanical brain interface to manage multiple holographic tasks, cinematic portrait, leather and brass textures.')" class="w-full bg-surface-container-highest text-on-surface px-6 py-3 rounded-full font-bold text-xs flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all">
+          <span class="material-symbols-outlined text-sm">content_copy</span>
+          Copy Image Prompt
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Card 5 -->
+    <div class="group bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/10 hover:shadow-2xl transition-all duration-500">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        {% image "C:/Users/paris/.gemini/antigravity/brain/670937ab-12d5-409b-9b5d-d8e5a432127e/nautilus_data_sea_1773969513719.png", "Data Sea", "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" %}
+      </div>
+      <div class="p-8">
+        <h3 class="text-xl font-bold mb-4">The Neon Nautilus</h3>
+        <p class="text-sm text-on-surface-variant mb-6 line-clamp-2 italic">"The Nautilus submarine navigating a sea of glowing neon data streams and digital coral reefs..."</p>
+        <button onclick="copyPrompt(this, 'The Nautilus submarine navigating a sea of glowing neon data streams and digital coral reefs, steampunk-meets-cyberpunk aesthetic, epic scale, bioluminescent creatures integrated with mechanical parts.')" class="w-full bg-surface-container-highest text-on-surface px-6 py-3 rounded-full font-bold text-xs flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all">
+          <span class="material-symbols-outlined text-sm">content_copy</span>
+          Copy Image Prompt
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Card 6 -->
+    <div class="group bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/10 hover:shadow-2xl transition-all duration-500">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        {% image "C:/Users/paris/.gemini/antigravity/brain/670937ab-12d5-409b-9b5d-d8e5a432127e/automation_nebula_ai_1773969527015.png", "Automation Nebula", "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" %}
+      </div>
+      <div class="p-8">
+        <h3 class="text-xl font-bold mb-4">The Starry Automation Engine</h3>
+        <p class="text-sm text-on-surface-variant mb-6 line-clamp-2 italic">"A massive clockwork automation engine floating in a golden nebula..."</p>
+        <button onclick="copyPrompt(this, 'A massive clockwork automation engine floating in a golden nebula, gears made of starlight and brass, intricate celestial mechanics, representing infinite AI workflow power, high-detail fantasy art.')" class="w-full bg-surface-container-highest text-on-surface px-6 py-3 rounded-full font-bold text-xs flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all">
+          <span class="material-symbols-outlined text-sm">content_copy</span>
+          Copy Image Prompt
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function copyPrompt(btn, text) {
+    navigator.clipboard.writeText(text).then(() => {
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `
+        <span class="material-symbols-outlined text-sm">check</span>
+        Copied to Vault!
+      `;
+      btn.classList.add('bg-green-600', 'text-white');
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('bg-green-600', 'text-white');
+      }, 2000);
+    });
+  }
+</script>
